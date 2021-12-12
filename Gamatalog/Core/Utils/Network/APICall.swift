@@ -26,7 +26,7 @@ protocol Endpoint {
     var url: String { get }
 }
 
-enum Endpoints {
+public enum Endpoints {
     enum Gets: Endpoint {
         case gameList
         case gameDetail

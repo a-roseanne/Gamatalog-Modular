@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import Core
+import Game
 
 struct ContentView: View {
-    @EnvironmentObject var homePresenter: HomePresenter
+    @EnvironmentObject var homePresenter: GetListPresenter<Any, GameDomainModel, Interactor<Any, [GameDomainModel], GetGamesRepository<GetGameLocaleDataSource, GetGamesRemoteDataSource, GameTransformer>>>
+
     @EnvironmentObject var favoritePresenter: FavoritePresenter
     
     var body: some View {

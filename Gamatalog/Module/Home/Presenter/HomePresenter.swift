@@ -45,4 +45,5 @@ class HomePresenter: ObservableObject {
       NavigationLink(
       destination: router.createDetailView(for: game)) { content() }
     }
+    
 }

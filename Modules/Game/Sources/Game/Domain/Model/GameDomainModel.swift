@@ -15,7 +15,7 @@ public struct GameDomainModel: Equatable, Identifiable {
     public let rating: Double
     public var favorite: Bool = false
     
-    public init(id: String, name: String, released: String, backgroundImage: String, rating: Double) {
+    public init(id: Int, name: String, released: String, backgroundImage: String, rating: Double) {
         self.id = id
         self.name = name
         self.released = released

@@ -11,7 +11,7 @@ public class GameModuleEntity: Object {
     @objc dynamic var rating: Double = 0.0
     @objc dynamic var favorite = false
     
-    override static func primaryKey() -> String? {
+    public override static func primaryKey() -> String? {
         return "id"
     }
 }
@@ -25,11 +25,3 @@ class GameDetEntity: Object {
         return "id"
     }
 }
-//
-//  File.swift
-//  
-//
-//  Created by Angelica Roseanne on 12/12/21.
-//
-
-import Foundation

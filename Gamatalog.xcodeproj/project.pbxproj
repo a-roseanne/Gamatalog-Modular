@@ -13,6 +13,8 @@
 		0B461436274B901A0063B83E /* LocaleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B461435274B901A0063B83E /* LocaleDataSource.swift */; };
 		0B461439274B90330063B83E /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B461438274B90330063B83E /* GameEntity.swift */; };
 		0B5C1C44274A9C8100E780A8 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0B5C1C43274A9C8100E780A8 /* URLImage */; };
+		0B76465727663270007913AD /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 0B76465627663270007913AD /* Core */; };
+		0B76465927663274007913AD /* Game in Frameworks */ = {isa = PBXBuildFile; productRef = 0B76465827663274007913AD /* Game */; };
 		0B78D060274923E3006D8BE5 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0B78D05F274923E3006D8BE5 /* SDWebImageSwiftUI */; };
 		0B7DD8E1274BDE5A00A7B363 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7DD8E0274BDE5A00A7B363 /* FavoritePresenter.swift */; };
 		0B7DD8E3274BDE7200A7B363 /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7DD8E2274BDE7200A7B363 /* FavoriteRouter.swift */; };
@@ -110,9 +112,11 @@
 			files = (
 				0B78D060274923E3006D8BE5 /* SDWebImageSwiftUI in Frameworks */,
 				0B5C1C44274A9C8100E780A8 /* URLImage in Frameworks */,
+				0B76465927663274007913AD /* Game in Frameworks */,
 				0B461431274B8F630063B83E /* Realm in Frameworks */,
 				0B461433274B8F630063B83E /* RealmSwift in Frameworks */,
 				0BCB9D572748B4060033C001 /* Alamofire in Frameworks */,
+				0B76465727663270007913AD /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +162,13 @@
 				0B461438274B90330063B83E /* GameEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		0B76465527663270007913AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		0B7DD8D7274BDB5A00A7B363 /* Account */ = {
@@ -406,6 +417,7 @@
 				0BF8EEBA2743B714007291AC /* GamatalogTests */,
 				0BF8EEC42743B714007291AC /* GamatalogUITests */,
 				0BF8EEA82743B713007291AC /* Products */,
+				0B76465527663270007913AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -479,6 +491,8 @@
 				0B5C1C43274A9C8100E780A8 /* URLImage */,
 				0B461430274B8F630063B83E /* Realm */,
 				0B461432274B8F630063B83E /* RealmSwift */,
+				0B76465627663270007913AD /* Core */,
+				0B76465827663274007913AD /* Game */,
 			);
 			productName = Gamatalog;
 			productReference = 0BF8EEA72743B713007291AC /* Gamatalog.app */;
@@ -806,7 +820,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Gamatalog/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Gamatalog/Preview\\ Content";
 				DEVELOPMENT_TEAM = 8R468K9V5C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -815,6 +829,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -824,7 +839,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -835,7 +850,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Gamatalog/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Gamatalog/Preview\\ Content";
 				DEVELOPMENT_TEAM = 8R468K9V5C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -844,6 +859,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -853,7 +869,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1044,6 +1060,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0B5C1C42274A9C8100E780A8 /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
+		};
+		0B76465627663270007913AD /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		0B76465827663274007913AD /* Game */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Game;
 		};
 		0B78D05F274923E3006D8BE5 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;

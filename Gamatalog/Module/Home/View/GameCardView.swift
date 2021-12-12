@@ -7,9 +7,11 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import Core
+import Game
 
 struct GameCardView: View {
-    var game: GameModel
+    var game: GameDomainModel
     
     var body: some View {
         VStack {
