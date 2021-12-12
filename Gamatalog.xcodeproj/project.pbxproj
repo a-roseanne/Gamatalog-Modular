@@ -68,6 +68,7 @@
 		0B1CF7FC2744EFBD00C80160 /* GameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
 		0B461435274B901A0063B83E /* LocaleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleDataSource.swift; sourceTree = "<group>"; };
 		0B461438274B90330063B83E /* GameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
+		0B76465427662B1C007913AD /* Game */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Game; path = Modules/Game; sourceTree = "<group>"; };
 		0B7DD8E0274BDE5A00A7B363 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		0B7DD8E2274BDE7200A7B363 /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
 		0B7DD8E4274BDE8D00A7B363 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
@@ -399,6 +400,7 @@
 		0BF8EE9E2743B713007291AC = {
 			isa = PBXGroup;
 			children = (
+				0B76465427662B1C007913AD /* Game */,
 				0B08096C2764F1E000EED623 /* Core */,
 				0BF8EEA92743B713007291AC /* Gamatalog */,
 				0BF8EEBA2743B714007291AC /* GamatalogTests */,
