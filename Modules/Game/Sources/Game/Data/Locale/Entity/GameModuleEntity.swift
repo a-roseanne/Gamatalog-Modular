@@ -1,4 +1,3 @@
-
 import Foundation
 import RealmSwift
 
@@ -12,16 +11,6 @@ public class GameModuleEntity: Object {
     @objc dynamic var favorite = false
     
     public override static func primaryKey() -> String? {
-        return "id"
-    }
-}
-
-class GameDetEntity: Object {
-    
-    @objc dynamic var id: Int = 0
-    @objc dynamic var desc: String = ""
-    
-    override static func primaryKey() -> String? {
         return "id"
     }
 }

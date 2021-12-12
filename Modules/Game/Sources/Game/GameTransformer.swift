@@ -33,7 +33,7 @@ public struct GameTransformer: Mapper {
                 name: result.name,
                 released: result.released ?? "No Released Date",
                 backgroundImage: result.backgroundImage ?? "",
-                rating: result.rating ?? 0.0
+                rating: result.rating
             )
         }
     }

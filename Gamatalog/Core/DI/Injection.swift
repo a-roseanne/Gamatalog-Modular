@@ -10,7 +10,6 @@ import RealmSwift
 import Game
 import Core
 
-
 final class Injection: NSObject {
     let realm = try? Realm()
     
@@ -32,6 +31,17 @@ final class Injection: NSObject {
 
     }
     
+//    func provideGetDetail<U: UseCase>() ->  U where U.Request == [String: String], U.Response == DetailModel {
+//        let remote = GetDetailRemote(endpoint: Endpoints.Gets.gameDetail.url, key: API.key)
+//        let mapper = DetailTransform()
+//        let repository = GetDetailRepository(
+//            remoteDataSource: remote,
+//            mapper: mapper)
+//        // swiftlint:disable force_cast
+//        return Interactor(repository: repository) as! U
+//        // swiftlint:enable force_cast
+//    }
+    
     private func provideRepository() -> GameRepositoryProtocol {
         let realm = try? Realm()
 
@@ -40,12 +50,7 @@ final class Injection: NSObject {
 
         return GameRepository.sharedInstance(locale, remote)
     }
-//
-//    func provideHome() -> HomeUseCase {
-//        let repo = provideRepository()
-//        return HomeInteractor(repository: repo)
-//    }
-//
+    
     func provideDetail(game: GameModel) -> DetailUseCase {
         let repo = provideRepository()
         return DetailInteractor(repository: repo, game: game)
@@ -56,4 +61,3 @@ final class Injection: NSObject {
       return FavoriteInteractor(repository: repository)
     }
 }
-

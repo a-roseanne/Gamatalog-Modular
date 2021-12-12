@@ -24,25 +24,3 @@ public struct GameResponse: Decodable {
         case rating
     }
 }
-
-struct GameDetailResponse: Decodable {
-    let id: Int
-    let description: String
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case description = "description_raw"
-    }
-}
-
-struct GameScreenshots: Codable {
-    let results: [GameImg]
-}
-
-struct GameImg: Codable, Identifiable {
-    var id: Int
-    var image: String
-    enum CodingKeys: String, CodingKey {
-        case id, image
-    }
-}

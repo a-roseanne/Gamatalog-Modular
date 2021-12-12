@@ -59,7 +59,6 @@ public struct GetGameLocaleDataSource: LocaleDataSource {
     }
 }
 
-
 extension Results {
     
     func toArray<T>(ofType: T.Type) -> [T] {

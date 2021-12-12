@@ -9,7 +9,7 @@ import Combine
 import Alamofire
 import Foundation
  
-public struct GetGamesRemoteDataSource : DataSource {
+public struct GetGamesRemoteDataSource: DataSource {
     public typealias Request = Any
     
     public typealias Response = [GameResponse]
