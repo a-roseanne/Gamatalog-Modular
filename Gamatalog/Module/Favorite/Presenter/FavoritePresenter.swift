@@ -25,7 +25,8 @@ class FavoritePresenter: ObservableObject {
     func linkBuilder(
         for game: GameModel
     ) -> some View {
-        return router.createDetailView(for: game)
+        return Text("huhu")
+//        router.createDetailView(for: game)
     }
     
     func getGames() {

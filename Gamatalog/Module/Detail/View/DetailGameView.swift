@@ -8,14 +8,18 @@
 import SwiftUI
 import SDWebImageSwiftUI
 import URLImage
+import Game
+import Core
 
 struct DetailGameView: View {
-    @ObservedObject var presenter: DetailPresenter
+//    @ObservedObject var dpresenter: DetailPresenter
+    @ObservedObject var presenter: GetListPresenter<Any, GameDomainModel, Interactor<Any, [GameDomainModel], GetGamesRepository<GetGameLocaleDataSource, GetGamesRemoteDataSource, GameTransformer>>>
+    @State var game: GameDomainModel
     var scrWidth = UIScreen.main.bounds.width
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            WebImage(url: URL(string: presenter.game.backgroundImage))
+            WebImage(url: URL(string: game.backgroundImage))
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: UIScreen.main.bounds.size.width, height: 400)
@@ -25,18 +29,18 @@ struct DetailGameView: View {
             VStack {
                 // wishlist
                 HStack {
-                    Text(presenter.game.name)
+                    Text(game.name)
                         .font(.title.bold())
                     Spacer()
                     Button(action: {
-                        presenter.game.favorite.toggle()
-                        if presenter.game.favorite {
-                            presenter.addToFav()
-                        } else {
-                            presenter.deleteFromFav()
-                        }
+//                        presenter.game.favorite.toggle()
+//                        if game.favorite {
+//                            presenter.addToFav()
+//                        } else {
+//                            presenter.deleteFromFav()
+//                        }
                     }) {
-                        Image(systemName: presenter.game.favorite == true ? "heart.fill" : "heart")
+                        Image(systemName: game.favorite == true ? "heart.fill" : "heart")
                             .foregroundColor(.white)
                             .font(.largeTitle)
                             .animation(.interpolatingSpring(stiffness: 120, damping: 5, initialVelocity: 5), value: 0.5)
@@ -49,34 +53,34 @@ struct DetailGameView: View {
                     .padding(.bottom)
                 
                 // screenshots
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 15) {
-                        ForEach(presenter.gameScreenshots) { gameSs in
-                                URLImage(URL(string: gameSs.imgUrl)!) {image in
-                                    image
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 365, height: 225)
-                                        .clipped()
-                                        .cornerRadius(5.0)
-                                }
-                        }
-                    }
-                }
+//                ScrollView(.horizontal, showsIndicators: false) {
+//                    HStack(spacing: 15) {
+//                        ForEach(presenter.gameScreenshots) { gameSs in
+//                                URLImage(URL(string: gameSs.imgUrl)!) {image in
+//                                    image
+//                                        .resizable()
+//                                        .scaledToFill()
+//                                        .frame(width: 365, height: 225)
+//                                        .clipped()
+//                                        .cornerRadius(5.0)
+//                                }
+//                        }
+//                    }
+//                }
                 
                 // desc
-                Group {
-                    HStack {
-                        Text("Description")
-                            .font(.title2.bold())
-                        Spacer()
-                    }
-                    .padding(.horizontal, 10)
-                    Text(presenter.gameDesc)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .padding([.bottom, .horizontal])
-                        .padding(.top, 4)
-                }
+//                Group {
+//                    HStack {
+//                        Text("Description")
+//                            .font(.title2.bold())
+//                        Spacer()
+//                    }
+//                    .padding(.horizontal, 10)
+//                    Text(dpresenter.gameDesc)
+//                        .fixedSize(horizontal: false, vertical: true)
+//                        .padding([.bottom, .horizontal])
+//                        .padding(.top, 4)
+//                }
                 
                 Divider()
                     .background(.white)
@@ -94,7 +98,7 @@ struct DetailGameView: View {
                             Spacer()
                             Label(
                                 title: {
-                                    Text("\(String(format: "%.1f", presenter.game.rating))")
+                                    Text("\(String(format: "%.1f", game.rating))")
                                 },
                                 icon: {
                                     Image(systemName: "star.fill")
@@ -117,7 +121,7 @@ struct DetailGameView: View {
                                 Text("Release Date")
                                     .font(.footnote)
                                 Spacer()
-                                Text("\(presenter.game.released)")
+                                Text("\(game.released)")
                                     .font(.body.bold())
                                 Spacer()
                             }
@@ -136,8 +140,11 @@ struct DetailGameView: View {
             .foregroundColor(.white)
             .offset(y: -50)
             .onAppear {
-                self.presenter.getGameDesc(gameId: presenter.game.id)
-                self.presenter.getGameScreenshots(gameId: presenter.game.id)
+//                self.presenter.getGameDesc(gameId: presenter.game.id)
+//                self.dpresenter.getGameScreenshots(gameId: game.id)
+                if self.presenter.list.count == 0 {
+                    self.presenter.getList(request: game.id)
+                }
             }
         }
     }

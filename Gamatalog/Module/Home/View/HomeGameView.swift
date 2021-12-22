@@ -36,7 +36,9 @@ struct HomeGameView: View {
                             id: \.id
                         ) { game in
                             ZStack {
-                                GameCardView(game: game)
+                                linkBuilder(for: game) {
+                                    GameCardView(game: game)
+                                }
                                 .buttonStyle(PlainButtonStyle())
                             }
                             .padding()
@@ -77,5 +79,13 @@ struct HomeGameView: View {
                     }
                 }
             }
+    }
+    
+    func linkBuilder<Content: View>(
+      for game: GameDomainModel,
+      @ViewBuilder content: () -> Content
+    ) -> some View {
+      NavigationLink(
+      destination: HomeRouter().makeDetailView(for: game)) { content() }
     }
 }
