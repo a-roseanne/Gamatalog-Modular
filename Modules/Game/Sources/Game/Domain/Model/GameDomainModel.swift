@@ -23,3 +23,23 @@ public struct GameDomainModel: Equatable, Identifiable {
         self.rating = rating
     }
 }
+
+public struct GameDomainDetailModel: Equatable, Identifiable {
+    public let id: Int
+    public let description: String
+    
+    public init(id: Int, description: String) {
+        self.id = id
+        self.description = description
+    }
+}
+
+public struct GameDomainScreenshotModel: Equatable, Identifiable {
+    public let id: Int
+    public let imgUrl: String
+    
+    public init(id: Int, imgUrl: String) {
+        self.id = id
+        self.imgUrl = imgUrl
+    }
+}
